@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: client
+  labels:
+    name: client
+    app: client
+spec:
+  template:
+    spec:
+      containers:
+      - name: d1-client
+        image: dmri10018/d1_client:1
+      restartPolicy: Never
+  backoffLimit: 4
